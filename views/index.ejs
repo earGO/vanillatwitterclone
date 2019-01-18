@@ -1,10 +1,31 @@
 <% include ./partials/header %>
+<main class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <p class="lead">Tweets</p>
+            <div class="list-group">
+                <li class="list-group-item active">Info 1</li>
+                <li class="list-group-item">Info 2</li>
+                <li class="list-group-item">Info 3</li>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="thumbnail">
+                <%tweets.forEach(tweet => {%>
+                <hr>
+                    <p><strong><%= tweet.author %></strong><small class="text-muted text-uppercase">  <%= tweet.adress%></small></p>
+                    <p><%= tweet.content %></p>
+                <%})%>
+            </div>
+            <div class="well">
+                <div class="text-right">
+                    <a class="btn btn-primary" href="#">Add a comment</a>
+                    <hr>
+                </div>
 
-<h1>got a view here!</h1>
-
-<%tweets.forEach(tweet => {%>
-    <p><%= tweet.author %></p>
-    <p><%= tweet.content %></p>
-<%})%>
+            </div>
+        </div>
+    </div>
+</main>
 
 <% include ./partials/footer %>

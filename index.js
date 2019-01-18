@@ -24,7 +24,7 @@ app.get('/tweets', (req, res) => {
         if (err) {
             console.log('oops!\n',err)
         } else {
-            res.render('index',{tweets:tweets})
+            res.render('index',{tweets:allTweets})
         }
     })
 })

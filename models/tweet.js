@@ -8,4 +8,4 @@ var tweetSchema = new mongoose.Schema({
     content:String
 })
 
-module.export = mongoose.model('Tweet', tweetSchema);
+module.exports = mongoose.model('Tweet', tweetSchema);

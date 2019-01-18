@@ -1,7 +1,8 @@
-var mongoose = require("mongoose"),
-    Tweet = require('./models/tweet')
+var mongoose = require("mongoose");
 
-var tweets = [
+var Tweet = require('./models/tweet');
+
+var tweetData = [
     {
         author:'Nicki Minaj',
         img:'https://pixel.nymag.com/imgs/daily/vulture/2014/09/08/08-nicki.w700.h700.jpg',
@@ -44,16 +45,16 @@ var seedDB = function () {
         if(err) {
             console.log('error removing tweets\n',err)
         } else {
-            console.log('tweets removing')
-            tweets.forEach(tweet,(err,createdTweet) => {
-                if (err) {
-                    console.log('error creating tweet\n',err)
-                } else {
-                    console.log('created tweet',createdTweet)
-                }
-            })
-        }
-    })
-}
+            console.log('tweets removing successfull')
+            tweetData.forEach(tweet => {
+                Tweet.create(tweet,(err,createdTweet) => {
+                    if (err) {
+                        console.log('error creating tweet\n',err)
+                    } else {
+                        console.log('created tweet',createdTweet)
+                    }
+                })
+        })
+}})}
 
-module.export = seedDB;
+module.exports = seedDB;
