@@ -1,0 +1,10 @@
+<% include ./partials/header %>
+
+<h1>got a view here!</h1>
+
+<%tweets.forEach(tweet => {%>
+    <p><%= tweet.author %></p>
+    <p><%= tweet.content %></p>
+<%})%>
+
+<% include ./partials/footer %>
